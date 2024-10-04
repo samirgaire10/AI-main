@@ -1,125 +1,371 @@
 [
-    "llama3.2",
-    "llama3.1",
-    "gemma2",
-    "qwen2.5",
-    "phi3.5",
-    "nemotron-mini",
-    "mistral-small",
-    "mistral-nemo",
-    "deepseek-coder-v2",
-    "mistral",
-    "mixtral",
-    "codegemma",
-    "command-r",
-    "command-r-plus",
-    "llava",
-    "llama3",
-    "gemma",
-    "qwen",
-    "qwen2",
-    "phi3",
-    "llama2",
-    "codellama",
-    "nomic-embed-text",
-    "dolphin-mixtral",
-    "mxbai-embed-large",
-    "phi",
-    "deepseek-coder",
-    "llama2-uncensored",
-    "starcoder2",
-    "dolphin-mistral",
-    "zephyr",
-    "dolphin-llama3",
-    "yi",
-    "orca-mini",
-    "llava-llama3",
-    "mistral-openorca",
-    "qwen2.5-coder",
-    "starcoder",
-    "tinyllama",
-    "codestral",
-    "vicuna",
-    "llama2-chinese",
-    "wizard-vicuna-uncensored",
-    "codegeex4",
-    "granite-code",
-    "snowflake-arctic-embed",
-    "nous-hermes2",
-    "all-minilm",
-    "openchat",
-    "codeqwen",
-    "aya",
-    "wizardlm2",
-    "tinydolphin",
-    "wizardcoder",
-    "stable-code",
-    "openhermes",
-    "qwen2-math",
-    "bakllava",
-    "stablelm2",
-    "llama3-gradient",
-    "deepseek-llm",
-    "wizard-math",
-    "glm4",
-    "neural-chat",
-    "llama3-chatqa",
-    "reflection",
-    "moondream",
-    "phind-codellama",
-    "xwinlm",
-    "nous-hermes",
-    "sqlcoder",
-    "dolphincoder",
-    "yarn-llama2",
-    "smollm",
-    "mistral-large",
-    "wizardlm",
-    "deepseek-v2",
-    "starling-lm",
-    "falcon",
-    "samantha-mistral",
-    "solar",
-    "orca2",
-    "stable-beluga",
-    "dolphin-phi",
-    "wizardlm-uncensored",
-    "hermes3",
-    "yi-coder",
-    "llava-phi3",
-    "internlm2",
-    "yarn-mistral",
-    "llama-pro",
-    "medllama2",
-    "meditron",
-    "nexusraven",
-    "nous-hermes2-mixtral",
-    "codeup",
-    "everythinglm",
-    "llama3-groq-tool-use",
-    "magicoder",
-    "stablelm-zephyr",
-    "codebooga",
-    "wizard-vicuna",
-    "mistrallite",
-    "falcon2",
-    "duckdb-nsql",
-    "minicpm-v",
-    "megadolphin",
-    "notux",
-    "goliath",
-    "open-orca-platypus2",
-    "notus",
-    "bge-m3",
-    "mathstral",
-    "dbrx",
-    "nuextract",
-    "solar-pro",
-    "alfred",
-    "firefunction-v2",
-    "reader-lm",
-    "bge-large",
-    "deepseek-v2.5",
-    "bespoke-minicheck",
-    "paraphrase-multilingual"
+    {
+        "name": "llama3.2"
+    },
+    {
+        "name": "llama3.1"
+    },
+    {
+        "name": "gemma2"
+    },
+    {
+        "name": "qwen2.5"
+    },
+    {
+        "name": "phi3.5"
+    },
+    {
+        "name": "nemotron-mini"
+    },
+    {
+        "name": "mistral-small"
+    },
+    {
+        "name": "mistral-nemo"
+    },
+    {
+        "name": "deepseek-coder-v2"
+    },
+    {
+        "name": "mistral"
+    },
+    {
+        "name": "mixtral"
+    },
+    {
+        "name": "codegemma"
+    },
+    {
+        "name": "command-r"
+    },
+    {
+        "name": "command-r-plus"
+    },
+    {
+        "name": "llava"
+    },
+    {
+        "name": "llama3"
+    },
+    {
+        "name": "gemma"
+    },
+    {
+        "name": "qwen"
+    },
+    {
+        "name": "qwen2"
+    },
+    {
+        "name": "phi3"
+    },
+    {
+        "name": "llama2"
+    },
+    {
+        "name": "codellama"
+    },
+    {
+        "name": "nomic-embed-text"
+    },
+    {
+        "name": "dolphin-mixtral"
+    },
+    {
+        "name": "mxbai-embed-large"
+    },
+    {
+        "name": "phi"
+    },
+    {
+        "name": "deepseek-coder"
+    },
+    {
+        "name": "llama2-uncensored"
+    },
+    {
+        "name": "starcoder2"
+    },
+    {
+        "name": "dolphin-mistral"
+    },
+    {
+        "name": "zephyr"
+    },
+    {
+        "name": "dolphin-llama3"
+    },
+    {
+        "name": "yi"
+    },
+    {
+        "name": "orca-mini"
+    },
+    {
+        "name": "llava-llama3"
+    },
+    {
+        "name": "mistral-openorca"
+    },
+    {
+        "name": "qwen2.5-coder"
+    },
+    {
+        "name": "starcoder"
+    },
+    {
+        "name": "tinyllama"
+    },
+    {
+        "name": "codestral"
+    },
+    {
+        "name": "vicuna"
+    },
+    {
+        "name": "llama2-chinese"
+    },
+    {
+        "name": "wizard-vicuna-uncensored"
+    },
+    {
+        "name": "codegeex4"
+    },
+    {
+        "name": "granite-code"
+    },
+    {
+        "name": "snowflake-arctic-embed"
+    },
+    {
+        "name": "nous-hermes2"
+    },
+    {
+        "name": "all-minilm"
+    },
+    {
+        "name": "openchat"
+    },
+    {
+        "name": "codeqwen"
+    },
+    {
+        "name": "aya"
+    },
+    {
+        "name": "wizardlm2"
+    },
+    {
+        "name": "tinydolphin"
+    },
+    {
+        "name": "wizardcoder"
+    },
+    {
+        "name": "stable-code"
+    },
+    {
+        "name": "openhermes"
+    },
+    {
+        "name": "qwen2-math"
+    },
+    {
+        "name": "bakllava"
+    },
+    {
+        "name": "stablelm2"
+    },
+    {
+        "name": "llama3-gradient"
+    },
+    {
+        "name": "deepseek-llm"
+    },
+    {
+        "name": "wizard-math"
+    },
+    {
+        "name": "glm4"
+    },
+    {
+        "name": "neural-chat"
+    },
+    {
+        "name": "llama3-chatqa"
+    },
+    {
+        "name": "reflection"
+    },
+    {
+        "name": "moondream"
+    },
+    {
+        "name": "phind-codellama"
+    },
+    {
+        "name": "xwinlm"
+    },
+    {
+        "name": "nous-hermes"
+    },
+    {
+        "name": "sqlcoder"
+    },
+    {
+        "name": "dolphincoder"
+    },
+    {
+        "name": "yarn-llama2"
+    },
+    {
+        "name": "smollm"
+    },
+    {
+        "name": "mistral-large"
+    },
+    {
+        "name": "wizardlm"
+    },
+    {
+        "name": "deepseek-v2"
+    },
+    {
+        "name": "starling-lm"
+    },
+    {
+        "name": "falcon"
+    },
+    {
+        "name": "samantha-mistral"
+    },
+    {
+        "name": "solar"
+    },
+    {
+        "name": "orca2"
+    },
+    {
+        "name": "stable-beluga"
+    },
+    {
+        "name": "dolphin-phi"
+    },
+    {
+        "name": "wizardlm-uncensored"
+    },
+    {
+        "name": "hermes3"
+    },
+    {
+        "name": "yi-coder"
+    },
+    {
+        "name": "llava-phi3"
+    },
+    {
+        "name": "internlm2"
+    },
+    {
+        "name": "yarn-mistral"
+    },
+    {
+        "name": "llama-pro"
+    },
+    {
+        "name": "medllama2"
+    },
+    {
+        "name": "meditron"
+    },
+    {
+        "name": "nexusraven"
+    },
+    {
+        "name": "nous-hermes2-mixtral"
+    },
+    {
+        "name": "codeup"
+    },
+    {
+        "name": "everythinglm"
+    },
+    {
+        "name": "llama3-groq-tool-use"
+    },
+    {
+        "name": "magicoder"
+    },
+    {
+        "name": "stablelm-zephyr"
+    },
+    {
+        "name": "codebooga"
+    },
+    {
+        "name": "wizard-vicuna"
+    },
+    {
+        "name": "mistrallite"
+    },
+    {
+        "name": "falcon2"
+    },
+    {
+        "name": "duckdb-nsql"
+    },
+    {
+        "name": "minicpm-v"
+    },
+    {
+        "name": "megadolphin"
+    },
+    {
+        "name": "notux"
+    },
+    {
+        "name": "goliath"
+    },
+    {
+        "name": "open-orca-platypus2"
+    },
+    {
+        "name": "notus"
+    },
+    {
+        "name": "bge-m3"
+    },
+    {
+        "name": "mathstral"
+    },
+    {
+        "name": "dbrx"
+    },
+    {
+        "name": "nuextract"
+    },
+    {
+        "name": "solar-pro"
+    },
+    {
+        "name": "alfred"
+    },
+    {
+        "name": "firefunction-v2"
+    },
+    {
+        "name": "reader-lm"
+    },
+    {
+        "name": "bge-large"
+    },
+    {
+        "name": "deepseek-v2.5"
+    },
+    {
+        "name": "bespoke-minicheck"
+    },
+    {
+        "name": "paraphrase-multilingual"
+    }
 ]
