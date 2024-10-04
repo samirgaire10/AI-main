@@ -18,7 +18,7 @@
 </head>
 
 <style>
-    #col-md-4 col-12{
+    #col-md-4 col-12 {
         padding-bottom: 20px;
     }
 </style>
@@ -61,63 +61,105 @@
 
             <br><br>
             <br><br>
-           
-
-<div class="row row-cols-1 row-cols-md-3 g-4">
-  <div class="col">
-    <div class="card text-center">
-      <div class="card-body">
-      <h5 class="card-title">Llama3.2 Model</h5>
-        <!-- <p class="card-text">Download and install the Llama3.2 model for Ollama, a powerful and efficient language model.</p> -->
-        <button class="btn btn-primary w-100 mb-2" onclick="executeCommand('ollama run llama3.2')">Download Model</button>
-    </div>
-  </div>
-    </div>
-  <div class="col">
-    <div class="card text-center">
-      <div class="card-body">
-        <h5 class="card-title">Gemma2 Model (2b)</h5>
-        <!-- <p class="card-text">Download and install the Gemma2 model (2b version) for Ollama, a state-of-the-art model for conversational AI.</p> -->
-        <button class="btn btn-primary w-100 mb-2" onclick="executeCommand('ollama run gemma2:2b')">Download Model</button>
-  </div>
-</div>
-  </div>
-
-  <div class="col">
-    <div class="card text-center">
-      <div class="card-body">
-        <h5 class="card-title"> codegemma(2b)</h5>
-        <button class="btn btn-primary w-100 mb-2" onclick="executeCommand(' ollama run codegemma:2b')">Download Model</button>
-  </div>
-</div>
-  </div>
-
-</div>
-</div>
-<pre id="output" class="mt-2"></pre>
-            
-                <script>
-                    async function executeCommand(command) {
-                        const response = await fetch('http://localhost:5000/execute', {
-                            method: 'POST',
-                            headers: {
-                                'Content-Type': 'application/json'
-                            },
-                            body: JSON.stringify({ command })
-                        });
-            
-                        const result = await response.json();
-                        document.getElementById('output').textContent = result.output || result.error;
-                    }
-                </script>
-            </body>
-            </html>
-            
 
 
+            <div class="row row-cols-1 row-cols-md-3 g-4">
+                <div class="col">
+                    <div class="card text-center">
+                        <div class="card-body">
+                            <h5 class="card-title">Llama3.2 Model</h5>
+                            <!-- <p class="card-text">Download and install the Llama3.2 model for Ollama, a powerful and efficient language model.</p> -->
+                            <button class="btn btn-primary w-100 mb-2"
+                                onclick="executeCommand('ollama run llama3.2')">Download Model</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card text-center">
+                        <div class="card-body">
+                            <h5 class="card-title">Gemma2 Model (2b)</h5>
+                            <!-- <p class="card-text">Download and install the Gemma2 model (2b version) for Ollama, a state-of-the-art model for conversational AI.</p> -->
+                            <button class="btn btn-primary w-100 mb-2"
+                                onclick="executeCommand('ollama run gemma2:2b')">Download Model</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col">
+                    <div class="card text-center">
+                        <div class="card-body">
+                            <h5 class="card-title"> codegemma(2b)</h5>
+                            <button class="btn btn-primary w-100 mb-2"
+                                onclick="executeCommand(' ollama run codegemma:2b')">Download Model</button>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
         </div>
-        <script src="api.js"></script>
-        <script src="chat.js"></script>
+        <pre id="output" class="mt-2"></pre>
+
+        <script>
+            async function executeCommand(command) {
+                const response = await fetch('http://localhost:5000/execute', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({ command })
+                });
+
+                const result = await response.json();
+                document.getElementById('output').textContent = result.output || result.error;
+            }
+        </script>
+
+
+
+
+
+
+
+<h1>Model Names</h1>
+<ul id="model-list"></ul>
+
+<script>
+    // Function to fetch JSON data and display it
+    async function fetchModels() {
+        try {
+            const response = await fetch('models.json');
+            const models = await response.json();
+            const modelList = document.getElementById('model-list');
+
+            models.forEach(model => {
+                const listItem = document.createElement('li');
+                listItem.textContent = model;
+                modelList.appendChild(listItem);
+            });
+        } catch (error) {
+            console.error('Error fetching data:', error);
+        }
+    }
+
+    // Call the fetchModels function on page load
+    fetchModels();
+</script>
+
+
+
+
+
+
+
+</body>
+
+</html>
+
+
+
+</div>
+<script src="api.js"></script>
+<script src="chat.js"></script>
 
 </body>
 
