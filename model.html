@@ -17,6 +17,12 @@
     <link rel="stylesheet" href="chat.css">
 </head>
 
+<style>
+    #col-md-4 col-12{
+        padding-bottom: 20px;
+    }
+</style>
+
 <body data-bs-theme="dark">
 
 
@@ -49,31 +55,69 @@
                     <a href="./index.html"> <img src="favicon.ico" style="width: 10%;" alt="ollama">
                     </a>
                 </div>
+                Download Ollama Models
 
-                <br><br>
-                <div style="align-items: center;" id="model-controls"
-                    class="col-md-4 col-12 text-md-end text-start mb-3">
-                    <div class="d-flex flex-column align-items-md-end align-items-start">
-
-
-
-
-
-
-
-
-                    </div>
-                </div>
-                <!-- </div> -->
-
-
-                <!-- </div> -->
-                <!-- </div> -->
             </div>
-        </div>
+
+            <br><br>
+            <br><br>
+           
+
+<div class="row row-cols-1 row-cols-md-3 g-4">
+  <div class="col">
+    <div class="card text-center">
+      <div class="card-body">
+      <h5 class="card-title">Llama3.2 Model</h5>
+        <!-- <p class="card-text">Download and install the Llama3.2 model for Ollama, a powerful and efficient language model.</p> -->
+        <button class="btn btn-primary w-100 mb-2" onclick="executeCommand('ollama run llama3.2')">Download Model</button>
     </div>
-    <script src="api.js"></script>
-    <script src="chat.js"></script>
+  </div>
+    </div>
+  <div class="col">
+    <div class="card text-center">
+      <div class="card-body">
+        <h5 class="card-title">Gemma2 Model (2b)</h5>
+        <!-- <p class="card-text">Download and install the Gemma2 model (2b version) for Ollama, a state-of-the-art model for conversational AI.</p> -->
+        <button class="btn btn-primary w-100 mb-2" onclick="executeCommand('ollama run gemma2:2b')">Download Model</button>
+  </div>
+</div>
+  </div>
+
+  <div class="col">
+    <div class="card text-center">
+      <div class="card-body">
+        <h5 class="card-title"> codegemma(2b)</h5>
+        <button class="btn btn-primary w-100 mb-2" onclick="executeCommand(' ollama run codegemma:2b')">Download Model</button>
+  </div>
+</div>
+  </div>
+
+</div>
+</div>
+<pre id="output" class="mt-2"></pre>
+            
+                <script>
+                    async function executeCommand(command) {
+                        const response = await fetch('http://localhost:5000/execute', {
+                            method: 'POST',
+                            headers: {
+                                'Content-Type': 'application/json'
+                            },
+                            body: JSON.stringify({ command })
+                        });
+            
+                        const result = await response.json();
+                        document.getElementById('output').textContent = result.output || result.error;
+                    }
+                </script>
+            </body>
+            </html>
+            
+
+
+        </div>
+        <script src="api.js"></script>
+        <script src="chat.js"></script>
 
 </body>
 

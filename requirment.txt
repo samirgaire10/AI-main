@@ -1,0 +1,6 @@
+The user neet to install
+
+pip install Flask     
+pip install flask-cors
+
+python .\app.py   
