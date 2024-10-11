@@ -2,7 +2,7 @@
 <html>
 
 <head>
-    <title>Chat with Llama2</title>
+    <title>Modals</title>
     <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
     <link href="resources/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
@@ -16,7 +16,7 @@
         crossorigin="anonymous"></script>
     <link rel="stylesheet" href="chat.css">
 
-    
+
 
 </head>
 
@@ -52,9 +52,6 @@
 
 
 
-        
-
-
         <div id="main" class="container">
             <div class="row pt-3">
                 <div class="col-md-8 col-12">
@@ -63,19 +60,26 @@
                     <a href="./index.html"> <img src="favicon.ico" style="width: 10%;" alt="ollama">
                     </a>
                 </div>
-                Download Ollama Models
-
             </div>
 
+            <center>
+                <h2>Download Ollama Models </h2>
+            </center>
 
             <br><br>
             <br><br>
 
-            <h1>Model Names</h1>
+            <h1>Models</h1>
             <div id="download-message" class="mb-3"></div>
-            <div class="row row-cols-1 row-cols-md-3 g-4" id="model-list"></div>
-        
+            <div class="row row-cols-1 row-cols-md-3 g-4" id="model-list">
+               
+               
+               
+            </div>
+
         </div>
+
+
 
 
         <!-- model names and download -->
@@ -86,27 +90,27 @@
                     const response = await fetch('models.json');
                     const models = await response.json();
                     const modelList = document.getElementById('model-list');
-    
+
                     models.forEach(model => {
                         const colDiv = document.createElement('div');
                         colDiv.classList.add('col');
-    
+
                         const cardDiv = document.createElement('div');
                         cardDiv.classList.add('card', 'text-center');
-    
+
                         const cardBody = document.createElement('div');
                         cardBody.classList.add('card-body');
-    
+
                         // Model name above the button
                         const modelName = document.createElement('h5');
                         modelName.classList.add('card-title');
                         modelName.textContent = model.name; // Access the 'name' property
-    
+
                         // Add a paragraph or heading to show the model name above the button
                         const modelDescription = document.createElement('p');
                         modelDescription.textContent = `Model: ${model.name}`; // Show the model name
                         modelDescription.classList.add('mb-3'); // Optional: Add some margin below the description
-    
+
                         const downloadButton = document.createElement('button');
                         downloadButton.classList.add('btn', 'btn-primary', 'w-100', 'mb-2');
                         downloadButton.textContent = 'Download Model';
@@ -114,7 +118,7 @@
                             displayDownloadMessage(model.name);
                             executeCommand(`ollama run ${model.name}`);
                         };
-    
+
                         cardBody.appendChild(modelDescription); // Append model name description
                         cardBody.appendChild(downloadButton);
                         cardDiv.appendChild(cardBody);
@@ -125,20 +129,20 @@
                     console.error('Error fetching data:', error);
                 }
             }
-    
+
             // Function to display the download message
             function displayDownloadMessage(modelName) {
                 const messageDiv = document.getElementById('download-message');
                 messageDiv.textContent = `Downloading model: ${modelName}...`;
                 messageDiv.classList.add('alert', 'alert-info'); // Add Bootstrap alert classes
             }
-    
+
             // Dummy function to simulate command execution
             function executeCommand(command) {
                 console.log(`Executing command: ${command}`);
                 // Add your command execution logic here
             }
-    
+
             // Call the fetchModels function on page load
             fetchModels();
         </script>
@@ -147,7 +151,7 @@
 
 
 
-        
+
         <!-- -------for download -----  -->
 
         <pre id="output" class="mt-2"></pre>
